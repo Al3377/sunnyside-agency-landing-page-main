@@ -1,5 +1,85 @@
-body {
-  background-color: red;
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a, button {
+  color: inherit;
+  text-decoration: none;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.navbar {
+  color: #fff;
+  width: 100vw;
+  padding: 1.2rem 1.6rem;
+  font-family: Barlow, sans-serif;
+  font-size: 18px;
+  position: absolute;
+}
+
+.navbar__burger {
+  display: none;
+}
+
+.navbar__logo {
+  margin-right: auto;
+}
+
+.navbar__links a {
+  padding-right: 3em;
+}
+
+.navbar__btn {
+  color: #25564b;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: .6em 1.4em;
+  font-family: Barlow, sans-serif;
+  font-weight: 600;
+}
+
+.navbar__btn:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #fff3;
+}
+
+@media (width <= 800px) {
+  .navbar__links, .navbar__btn {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: inline-block;
+  }
+}
+
+.hero {
+  background-image: url("image-header.7852253d.jpg");
+  background-position: bottom;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  height: 100vh;
+  display: flex;
+}
+
+.hero__title h1 {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: Fraunces, serif;
+  font-size: 3rem;
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */

@@ -1,3 +1,117 @@
-body {
-  background-color: red;
+// CSS Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+button {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Colors
+// Primary Colors
+$red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$design-text: hsl(167, 40%, 24%);
+$photo-text: hsl(198, 62%, 26%);
+$footer: hsl(168, 34%, 41%);
+// Neutral Colors
+$blue-1: hsl(212, 27%, 19%);
+$blue-2: hsl(213, 9%, 39%);
+$blue-3: hsl(232, 10%, 55%);
+$blue-4: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+// Typography
+// Fonts
+$title-font: "Fraunces", serif;
+$text-font: "Barlow", sans-serif;
+// Font Size
+$text-size: 18px;
+// Font Weight
+$w-p: 600;
+$w-h1: 900;
+$w-h2: 700;
+
+// Layout
+$side-padding: 1.6rem;
+$top-padding: 1.2rem;
+
+// Utility Classes
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Navbar
+.navbar {
+  width: 100vw;
+  position: absolute;
+  font-family: $text-font;
+  font-size: $text-size;
+  color: $white;
+  padding: $top-padding $side-padding;
+
+  &__burger {
+    display: none;
+  }
+
+  &__logo {
+    margin-right: auto;
+  }
+  &__links a {
+    padding-right: 3em;
+  }
+  &__btn {
+    border: none;
+    border-radius: 18px;
+    padding: 0.6em 1.4em;
+    background-color: $white;
+    color: $design-text;
+    font-family: $text-font;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  &__btn:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: $white;
+  }
+  @media (max-width: 800px) {
+    &__links,
+    &__btn {
+      display: none;
+    }
+    &__burger {
+      display: inline-block;
+    }
+  }
+}
+
+// Hero
+.hero {
+  height: 100vh;
+  background-image: url("../images/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: bottom;
+
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  &__title h1 {
+    font-family: $title-font;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: $white;
+    // letter-spacing: 5px;
+    // margin-top: 35%;
+    // margin-bottom: 15%;
+  }
 }

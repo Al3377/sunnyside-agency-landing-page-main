@@ -11,6 +11,14 @@ button {
   text-decoration: none;
   color: inherit;
 }
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
 // Colors
 // Primary Colors
@@ -42,15 +50,29 @@ $side-padding: 1.6rem;
 $top-padding: 1.2rem;
 
 // Utility Classes
-.center {
+
+.flex-row {
   display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.space {
+  justify-content: space-between;
+}
+.center {
   align-items: center;
   justify-content: center;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 
 // Navbar
 .navbar {
-  width: 100vw;
+  width: 100%;
   position: absolute;
   font-family: $text-font;
   font-size: $text-size;
@@ -75,7 +97,6 @@ $top-padding: 1.2rem;
     color: $design-text;
     font-family: $text-font;
     font-weight: 600;
-    text-transform: uppercase;
   }
   &__btn:hover {
     cursor: pointer;
@@ -99,19 +120,55 @@ $top-padding: 1.2rem;
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
   background-position: bottom;
-
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+
   &__title h1 {
     font-family: $title-font;
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase;
     color: $white;
-    // letter-spacing: 5px;
-    // margin-top: 35%;
-    // margin-bottom: 15%;
+    letter-spacing: 5px;
+    margin-top: -30%;
+  }
+}
+
+// Main
+.img-block {
+  flex: 1;
+  max-width: 50%;
+  height: 100vh;
+  background-image: url("../images/desktop/image-transform.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.text-block {
+  max-width: 50%;
+}
+.text-container {
+  max-width: 50%;
+  max-height: 50%;
+}
+.text-container {
+  & h2 {
+    padding-bottom: 1rem;
+    font-family: $title-font;
+    font-size: 3rem;
+  }
+  & p {
+    font-family: $text-font;
+    font-size: $text-size;
+    padding-bottom: 2rem;
+    line-height: 1.5;
+  }
+  & a {
+    border-bottom: 8px solid $yellow;
+    border-radius: 5px;
+    max-width: 25%;
+    line-height: 0.5;
+    font-family: $title-font;
+    font-weight: $w-h2;
   }
 }

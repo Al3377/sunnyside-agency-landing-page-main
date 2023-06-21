@@ -9,15 +9,37 @@ a, button {
   text-decoration: none;
 }
 
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  display: block;
+}
+
+.flex-row {
+  flex-direction: row;
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+  display: flex;
+}
+
+.space {
+  justify-content: space-between;
+}
+
 .center {
   justify-content: center;
   align-items: center;
-  display: flex;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .navbar {
   color: #fff;
-  width: 100vw;
+  width: 100%;
   padding: 1.2rem 1.6rem;
   font-family: Barlow, sans-serif;
   font-size: 18px;
@@ -38,7 +60,6 @@ a, button {
 
 .navbar__btn {
   color: #25564b;
-  text-transform: uppercase;
   background-color: #fff;
   border: none;
   border-radius: 18px;
@@ -70,7 +91,6 @@ a, button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
   height: 100vh;
   display: flex;
 }
@@ -78,8 +98,50 @@ a, button {
 .hero__title h1 {
   text-transform: uppercase;
   color: #fff;
+  letter-spacing: 5px;
+  margin-top: -30%;
+  font-family: Fraunces, serif;
+  font-size: 4rem;
+}
+
+.img-block {
+  background-image: url("image-transform.de90e8f1.jpg");
+  background-position: center;
+  background-size: cover;
+  flex: 1;
+  max-width: 50%;
+  height: 100vh;
+}
+
+.text-block {
+  max-width: 50%;
+}
+
+.text-container {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.text-container h2 {
+  padding-bottom: 1rem;
   font-family: Fraunces, serif;
   font-size: 3rem;
+}
+
+.text-container p {
+  padding-bottom: 2rem;
+  font-family: Barlow, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.text-container a {
+  border-bottom: 8px solid #fad400;
+  border-radius: 5px;
+  max-width: 25%;
+  font-family: Fraunces, serif;
+  font-weight: 700;
+  line-height: .5;
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */

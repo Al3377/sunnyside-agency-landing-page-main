@@ -75,6 +75,10 @@ $top-padding: 1.2rem;
 .r-underline {
   border-bottom: 8px solid $red;
 }
+.text-bottom {
+  align-items: center;
+  justify-content: end;
+}
 
 // Navbar
 .navbar {
@@ -162,6 +166,26 @@ $top-padding: 1.2rem;
     background-position: center;
     @media (max-width: 800px) {
       background-image: url("../images/mobile/image-stand-out.jpg");
+    }
+  }
+  &--3 {
+    background-image: url("../images/desktop/image-graphic-design.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 9%;
+    text-align: center;
+    @media (max-width: 800px) {
+      background-image: url("../images/mobile/image-graphic-design.jpg");
+    }
+  }
+  &--4 {
+    background-image: url("../images/desktop/image-photography.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 9%;
+    text-align: center;
+    @media (max-width: 800px) {
+      background-image: url("../images/mobile/image-photography.jpg");
     }
   }
 }

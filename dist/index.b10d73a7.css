@@ -45,6 +45,11 @@ img, picture, video, canvas, svg {
   border-bottom: 8px solid #fe7867;
 }
 
+.text-bottom {
+  justify-content: end;
+  align-items: center;
+}
+
 .navbar {
   color: #fff;
   width: 100%;
@@ -146,6 +151,34 @@ img, picture, video, canvas, svg {
 @media (width <= 800px) {
   .img-block--2 {
     background-image: url("image-stand-out.d35149a2.jpg");
+  }
+}
+
+.img-block--3 {
+  text-align: center;
+  background-image: url("image-graphic-design.b3020367.jpg");
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 9%;
+}
+
+@media (width <= 800px) {
+  .img-block--3 {
+    background-image: url("image-graphic-design.80a87476.jpg");
+  }
+}
+
+.img-block--4 {
+  text-align: center;
+  background-image: url("image-photography.89257b0c.jpg");
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 9%;
+}
+
+@media (width <= 800px) {
+  .img-block--4 {
+    background-image: url("image-photography.33a6816a.jpg");
   }
 }
 

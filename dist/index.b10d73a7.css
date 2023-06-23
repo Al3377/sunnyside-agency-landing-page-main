@@ -37,6 +37,14 @@ img, picture, video, canvas, svg {
   text-transform: uppercase;
 }
 
+.y-underline {
+  border-bottom: 8px solid #fad400;
+}
+
+.r-underline {
+  border-bottom: 8px solid #fe7867;
+}
+
 .navbar {
   color: #fff;
   width: 100%;
@@ -88,15 +96,16 @@ img, picture, video, canvas, svg {
   background-image: url("image-header.7852253d.jpg");
   background-position: bottom;
   background-size: cover;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  display: flex;
+}
+
+@media (width <= 800px) {
+  .hero {
+    background-image: url("image-header.2c7d5d10.jpg");
+  }
 }
 
 .hero__title h1 {
-  text-transform: uppercase;
   color: #fff;
   letter-spacing: 5px;
   margin-top: -30%;
@@ -104,17 +113,45 @@ img, picture, video, canvas, svg {
   font-size: 4rem;
 }
 
+@media (width <= 800px) {
+  .hero__title h1 {
+    font-size: 3rem;
+  }
+}
+
 .img-block {
-  background-image: url("image-transform.de90e8f1.jpg");
-  background-position: center;
-  background-size: cover;
   flex: 1;
   max-width: 50%;
   height: 100vh;
 }
 
+.img-block--1 {
+  background-image: url("image-transform.de90e8f1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (width <= 800px) {
+  .img-block--1 {
+    background-image: url("image-transform.f229af1e.jpg");
+  }
+}
+
+.img-block--2 {
+  background-image: url("image-stand-out.128b0c80.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (width <= 800px) {
+  .img-block--2 {
+    background-image: url("image-stand-out.d35149a2.jpg");
+  }
+}
+
 .text-block {
   max-width: 50%;
+  margin-bottom: 10%;
 }
 
 .text-container {
@@ -123,22 +160,28 @@ img, picture, video, canvas, svg {
 }
 
 .text-container h2 {
-  padding-bottom: 1rem;
+  padding-bottom: 2.5rem;
   font-family: Fraunces, serif;
   font-size: 3rem;
 }
 
+@media (width <= 800px) {
+  .text-container h2 {
+    padding-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+}
+
 .text-container p {
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
   font-family: Barlow, sans-serif;
   font-size: 18px;
   line-height: 1.5;
 }
 
 .text-container a {
-  border-bottom: 8px solid #fad400;
   border-radius: 5px;
-  max-width: 25%;
+  width: 7.5rem;
   font-family: Fraunces, serif;
   font-weight: 700;
   line-height: .5;

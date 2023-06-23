@@ -69,6 +69,12 @@ $top-padding: 1.2rem;
 .uppercase {
   text-transform: uppercase;
 }
+.y-underline {
+  border-bottom: 8px solid $yellow;
+}
+.r-underline {
+  border-bottom: 8px solid $red;
+}
 
 // Navbar
 .navbar {
@@ -120,18 +126,19 @@ $top-padding: 1.2rem;
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
   background-position: bottom;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media (max-width: 800px) {
+    background-image: url("../images/mobile/image-header.jpg");
+  }
 
   &__title h1 {
     font-family: $title-font;
-    font-size: 4rem;
-    text-transform: uppercase;
     color: $white;
+    font-size: 4rem;
     letter-spacing: 5px;
     margin-top: -30%;
+    @media (max-width: 800px) {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -140,12 +147,27 @@ $top-padding: 1.2rem;
   flex: 1;
   max-width: 50%;
   height: 100vh;
-  background-image: url("../images/desktop/image-transform.jpg");
-  background-size: cover;
-  background-position: center;
+
+  &--1 {
+    background-image: url("../images/desktop/image-transform.jpg");
+    background-size: cover;
+    background-position: center;
+    @media (max-width: 800px) {
+      background-image: url("../images/mobile/image-transform.jpg");
+    }
+  }
+  &--2 {
+    background-image: url("../images/desktop/image-stand-out.jpg");
+    background-size: cover;
+    background-position: center;
+    @media (max-width: 800px) {
+      background-image: url("../images/mobile/image-stand-out.jpg");
+    }
+  }
 }
 .text-block {
   max-width: 50%;
+  margin-bottom: 10%;
 }
 .text-container {
   max-width: 50%;
@@ -153,20 +175,23 @@ $top-padding: 1.2rem;
 }
 .text-container {
   & h2 {
-    padding-bottom: 1rem;
+    padding-bottom: 2.5rem;
     font-family: $title-font;
     font-size: 3rem;
+    @media (max-width: 800px) {
+      font-size: 2.5rem;
+      padding-bottom: 2rem;
+    }
   }
   & p {
     font-family: $text-font;
     font-size: $text-size;
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
     line-height: 1.5;
   }
   & a {
-    border-bottom: 8px solid $yellow;
     border-radius: 5px;
-    max-width: 25%;
+    width: 7.5rem;
     line-height: 0.5;
     font-family: $title-font;
     font-weight: $w-h2;

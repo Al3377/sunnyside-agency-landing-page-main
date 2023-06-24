@@ -110,6 +110,25 @@ img, picture, video, canvas, svg {
   }
 }
 
+@media (width <= 600px) {
+  .hero {
+    height: 90vh;
+  }
+}
+
+@media (width <= 420px) {
+  .hero {
+    height: 80vh;
+  }
+}
+
+@media (width <= 600px) {
+  .hero__title {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 .hero__title h1 {
   color: #fff;
   letter-spacing: 5px;
@@ -121,6 +140,12 @@ img, picture, video, canvas, svg {
 @media (width <= 800px) {
   .hero__title h1 {
     font-size: 3rem;
+  }
+}
+
+@media (width <= 420px) {
+  .hero__title h1 {
+    font-size: 2.5rem;
   }
 }
 
@@ -164,6 +189,7 @@ img, picture, video, canvas, svg {
 
 @media (width <= 800px) {
   .img-block--3 {
+    text-align: left;
     background-image: url("image-graphic-design.80a87476.jpg");
   }
 }
@@ -178,6 +204,7 @@ img, picture, video, canvas, svg {
 
 @media (width <= 800px) {
   .img-block--4 {
+    text-align: left;
     background-image: url("image-photography.33a6816a.jpg");
   }
 }
@@ -210,6 +237,12 @@ img, picture, video, canvas, svg {
   font-family: Barlow, sans-serif;
   font-size: 18px;
   line-height: 1.5;
+}
+
+@media (width <= 800px) {
+  .text-container p {
+    font-size: 1rem;
+  }
 }
 
 .text-container a {

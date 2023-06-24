@@ -133,15 +133,30 @@ $top-padding: 1.2rem;
   @media (max-width: 800px) {
     background-image: url("../images/mobile/image-header.jpg");
   }
+  @media (max-width: 600px) {
+    height: 90vh;
+  }
+  @media (max-width: 420px) {
+    height: 80vh;
+  }
 
-  &__title h1 {
-    font-family: $title-font;
-    color: $white;
-    font-size: 4rem;
-    letter-spacing: 5px;
-    margin-top: -30%;
-    @media (max-width: 800px) {
-      font-size: 3rem;
+  &__title {
+    @media (max-width: 600px) {
+      white-space: normal;
+      text-align: center;
+    }
+    & h1 {
+      font-family: $title-font;
+      color: $white;
+      font-size: 4rem;
+      letter-spacing: 5px;
+      margin-top: -30%;
+      @media (max-width: 800px) {
+        font-size: 3rem;
+      }
+      @media (max-width: 420px) {
+        font-size: 2.5rem;
+      }
     }
   }
 }
@@ -176,6 +191,7 @@ $top-padding: 1.2rem;
     text-align: center;
     @media (max-width: 800px) {
       background-image: url("../images/mobile/image-graphic-design.jpg");
+      text-align: left;
     }
   }
   &--4 {
@@ -186,6 +202,7 @@ $top-padding: 1.2rem;
     text-align: center;
     @media (max-width: 800px) {
       background-image: url("../images/mobile/image-photography.jpg");
+      text-align: left;
     }
   }
 }
@@ -212,6 +229,9 @@ $top-padding: 1.2rem;
     font-size: $text-size;
     padding-bottom: 2.5rem;
     line-height: 1.5;
+    @media (max-width: 800px) {
+      font-size: 1rem;
+    }
   }
   & a {
     border-radius: 5px;
@@ -221,3 +241,5 @@ $top-padding: 1.2rem;
     font-weight: $w-h2;
   }
 }
+
+// Testemonials

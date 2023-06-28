@@ -81,18 +81,21 @@ $top-padding: 1.2rem;
 }
 
 // Mixins
-@mixin centering {
+@mixin flexo($direction: row, $justify: center, $align: center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
-@mixin col-centering {
-  @include centering;
-  flex-direction: column;
+@mixin background($position) {
+  background-size: cover;
+  background-position: $position;
 }
+
 // Navbar
 .navbar {
   width: 100%;
+  @include flexo();
   position: absolute;
   font-family: $text-font;
   font-size: $text-size;
@@ -137,9 +140,9 @@ $top-padding: 1.2rem;
 // Hero
 .hero {
   height: 100vh;
+  @include flexo(column);
   background-image: url("../images/desktop/image-header.jpg");
-  background-size: cover;
-  background-position: bottom;
+  @include background(bottom);
   @media (max-width: 800px) {
     background-image: url("../images/mobile/image-header.jpg");
   }
@@ -179,24 +182,21 @@ $top-padding: 1.2rem;
 
   &--1 {
     background-image: url("../images/desktop/image-transform.jpg");
-    background-size: cover;
-    background-position: center;
+    @include background(center);
     @media (max-width: 1200px) {
       background-image: url("../images/mobile/image-transform.jpg");
     }
   }
   &--2 {
     background-image: url("../images/desktop/image-stand-out.jpg");
-    background-size: cover;
-    background-position: center;
+    @include background(center);
     @media (max-width: 1200px) {
       background-image: url("../images/mobile/image-stand-out.jpg");
     }
   }
   &--3 {
     background-image: url("../images/desktop/image-graphic-design.jpg");
-    background-size: cover;
-    background-position: center;
+    @include background(center);
     padding-bottom: 9%;
     text-align: center;
     @media (max-width: 1200px) {
@@ -206,8 +206,7 @@ $top-padding: 1.2rem;
   }
   &--4 {
     background-image: url("../images/desktop/image-photography.jpg");
-    background-size: cover;
-    background-position: center;
+    @include background(center);
     padding-bottom: 9%;
     text-align: center;
     @media (max-width: 1200px) {
@@ -255,7 +254,7 @@ $top-padding: 1.2rem;
 // Testimonials
 .testimonials {
   height: 100vh;
-  @include centering;
+  @include flexo();
   &__container {
     margin: 10%;
     & h2 {
@@ -273,7 +272,7 @@ $top-padding: 1.2rem;
   }
   &__item {
     text-align: center;
-    @include col-centering;
+    @include flexo(column);
 
     & img {
       border-radius: 50%;

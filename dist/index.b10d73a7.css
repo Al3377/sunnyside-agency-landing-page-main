@@ -323,4 +323,63 @@ img, picture, video, canvas, svg {
   font-family: Barlow, sans-serif;
 }
 
+.footer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.footer__top {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.footer__bottom {
+  background-color: #458c7e;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+}
+
+.footer__bottom--center {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 20%;
+  display: flex;
+}
+
+.footer__nav {
+  color: #25564b;
+  padding-top: 3rem;
+  font-family: Barlow, sans-serif;
+  display: inline-block;
+}
+
+.footer__nav a:nth-child(2) {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.footer__social {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  display: flex;
+}
+
+.footer__social a {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
 /*# sourceMappingURL=index.b10d73a7.css.map */

@@ -33,6 +33,7 @@ $blue-2: hsl(213, 9%, 39%);
 $blue-3: hsl(232, 10%, 55%);
 $blue-4: hsl(210, 4%, 67%);
 $white: hsl(0, 0%, 100%);
+$btn-hover: rgba(255, 255, 255, 0.2);
 
 // Typography
 // Fonts
@@ -40,6 +41,10 @@ $title-font: "Fraunces", serif;
 $text-font: "Barlow", sans-serif;
 // Font Size
 $text-size: 18px;
+$text-small: 0.8rem;
+$title-big: 4rem;
+$title-medium: 3rem;
+$tilte-small: 2.5rem;
 // Font Weight
 $w-p: 600;
 $w-h1: 900;
@@ -59,13 +64,14 @@ $top-padding: 1.2rem;
   display: flex;
   flex-direction: column;
 }
-.space {
-  justify-content: space-between;
-}
-.center {
-  align-items: center;
-  justify-content: center;
-}
+
+// .space {
+//   justify-content: space-between;
+// }
+// .center {
+//   align-items: center;
+//   justify-content: center;
+// }
 .uppercase {
   text-transform: uppercase;
 }
@@ -119,11 +125,11 @@ $top-padding: 1.2rem;
     background-color: $white;
     color: $design-text;
     font-family: $text-font;
-    font-weight: 600;
+    font-weight: $w-p;
   }
   &__btn:hover {
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: $btn-hover;
     color: $white;
   }
   @media (max-width: 800px) {
@@ -155,17 +161,18 @@ $top-padding: 1.2rem;
 
   &__title {
     @media (max-width: 600px) {
+      max-width: 90%;
       white-space: normal;
       text-align: center;
     }
     & h1 {
       font-family: $title-font;
       color: $white;
-      font-size: 4rem;
+      font-size: $title-big;
       letter-spacing: 5px;
       margin-top: -30%;
       @media (max-width: 1200px) {
-        font-size: 3rem;
+        font-size: $title-medium;
       }
       @media (max-width: 420px) {
         font-size: 2.5rem;
@@ -175,23 +182,41 @@ $top-padding: 1.2rem;
 }
 
 // Main
-
+.main-block {
+  &__container {
+    @include flexo(row, space-between);
+    @media (max-width: 600px) {
+      @include flexo(column-reverse, center);
+    }
+    &--rv {
+      @media (max-width: 600px) {
+        @include flexo(column, center);
+      }
+    }
+  }
+}
 .img-block {
   flex: 1;
   max-width: 50%;
   height: 100vh;
-
+  @media (max-width: 600px) {
+    width: 100%;
+    min-height: 95vh;
+  }
   &--1 {
     background-image: url("../images/desktop/image-transform.jpg");
     @include background(center);
-    @media (max-width: 1200px) {
+    @media (max-width: 800px) {
       background-image: url("../images/mobile/image-transform.jpg");
+      // @media (max-width: 600px) {
+      //   @include background(bottom);
+      // }
     }
   }
   &--2 {
     background-image: url("../images/desktop/image-stand-out.jpg");
     @include background(center);
-    @media (max-width: 1200px) {
+    @media (max-width: 800px) {
       background-image: url("../images/mobile/image-stand-out.jpg");
     }
   }
@@ -200,8 +225,11 @@ $top-padding: 1.2rem;
     @include background(center);
     padding-bottom: 9%;
     text-align: center;
-    @media (max-width: 1200px) {
+    @media (max-width: 800px) {
       background-image: url("../images/mobile/image-graphic-design.jpg");
+      @media (max-width: 600px) {
+        @include background(top);
+      }
       text-align: left;
     }
   }
@@ -210,21 +238,40 @@ $top-padding: 1.2rem;
     @include background(center);
     padding-bottom: 9%;
     text-align: center;
-    @media (max-width: 1200px) {
+    @media (max-width: 800px) {
       background-image: url("../images/mobile/image-photography.jpg");
+      @media (max-width: 600px) {
+        @include background(top);
+      }
       text-align: left;
     }
   }
+  @media (max-width: 600px) {
+    max-width: 100%;
+    height: 100vh;
+  }
 }
 .text-block {
+  @include flexo();
   max-width: 50%;
   margin-bottom: 10%;
+  @media (max-width: 600px) {
+    max-width: 100%;
+    height: 50vh;
+  }
 }
+
 .text-container {
+  @include flexo(column, start, start);
   max-width: 50%;
   max-height: 50%;
-}
-.text-container {
+  @media (max-width: 400px) {
+    max-width: 90%;
+  }
+
+  &--center {
+    align-items: center;
+  }
   & h2 {
     padding-bottom: 2.5rem;
     font-family: $title-font;
@@ -232,6 +279,10 @@ $top-padding: 1.2rem;
     @media (max-width: 1200px) {
       font-size: 2.5rem;
       padding-bottom: 2rem;
+    }
+    @media (max-width: 800px) {
+      font-size: 2rem;
+      padding-bottom: 1.8rem;
     }
   }
   & p {
@@ -241,6 +292,12 @@ $top-padding: 1.2rem;
     line-height: 1.5;
     @media (max-width: 1200px) {
       font-size: 1rem;
+    }
+    @media (max-width: 800px) {
+      font-size: $text-small;
+    }
+    @media (max-width: 600px) {
+      padding-bottom: 1.2rem;
     }
   }
   & a {
@@ -256,32 +313,60 @@ $top-padding: 1.2rem;
 .testimonials {
   height: 100vh;
   @include flexo();
+  @media (max-width: 800px) {
+    height: 80vh;
+  }
+  // @media (max-width: 600px) {
+  //   @include flexo(column);
+  // }
+
   &__container {
     margin: 10%;
+    @media (max-width: 600px) {
+      margin: 5%;
+    }
+
     & h2 {
       margin-bottom: 7%;
       color: $blue-3;
       font-family: $title-font;
       text-align: center;
       letter-spacing: 5px;
+      @media (max-width: 600px) {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+      }
     }
   }
   &__grid {
-    // display: flex;
-    // justify-content: space-between;
     @include flexo(row, space-between, center);
+    @media (max-width: 600px) {
+      @include flexo(column, space-between, center);
+      gap: 0;
+    }
   }
   &__item {
     text-align: center;
     @include flexo(column);
+    @media (max-width: 600px) {
+      @include flexo(column, space-around, center);
+      gap: 0;
+      margin-top: 1rem;
+    }
 
     & img {
       border-radius: 50%;
       max-width: 20%;
+      @media (max-width: 600px) {
+        max-width: 10%;
+      }
     }
 
     .person {
       margin-top: 2rem;
+      @media (max-width: 600px) {
+        margin-top: 0.5rem;
+      }
       .name {
         padding-bottom: 0.4rem;
         font-family: $title-font;
@@ -300,6 +385,13 @@ $top-padding: 1.2rem;
     margin-top: 2rem;
     font-family: $text-font;
     color: $blue-1;
+    @media (max-width: 800px) {
+      font-size: $text-small;
+    }
+    @media (max-width: 600px) {
+      margin-top: 0.2rem;
+      padding: 0.2rem 1rem;
+    }
   }
 }
 
@@ -307,6 +399,10 @@ $top-padding: 1.2rem;
 
 .footer {
   height: 100vh;
+  @media (max-width: 800px) {
+    height: 80vh;
+  }
+
   width: 100%;
   @include flexo(column);
 
@@ -322,7 +418,7 @@ $top-padding: 1.2rem;
     @include flexo(column);
     &--center {
       text-align: center;
-      max-width: 20%;
+      // max-width: 30%;
       @include flexo(column);
     }
   }
